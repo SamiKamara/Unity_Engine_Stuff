@@ -146,6 +146,6 @@ public class KamaraOutlinerScr : MonoBehaviour
     private Vector3 OuterEdgePoint(int step)
     {
         float myAngle = (float)step * (360.0f / (float)Density) * Mathf.Deg2Rad;
-        return transform.TransformDirection(new Vector3(Mathf.Cos(myAngle), Mathf.Sin(myAngle), 0f) * (OutlineDistance));
+        return transform.TransformDirection(new Vector3(Mathf.Cos(myAngle), Mathf.Sin(myAngle), 0f) * OutlineDistance);
     }
 }
