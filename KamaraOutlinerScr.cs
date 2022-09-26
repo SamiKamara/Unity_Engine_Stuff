@@ -21,6 +21,7 @@ public class KamaraOutlinerScr : MonoBehaviour
     private string textEcho;
     private int densityEcho;
     private float outlineDistanceEcho;
+    private Color colorEcho;
     
     private void OnEnable()
     {
@@ -53,6 +54,10 @@ public class KamaraOutlinerScr : MonoBehaviour
         {
             CallForUpdate = true;
         }
+        else if(colorEcho != OutlineColor)
+        {
+            CallForUpdate = true;
+        }
 
         SetEchos();
     }
@@ -62,6 +67,7 @@ public class KamaraOutlinerScr : MonoBehaviour
         textEcho = MyText.text;
         densityEcho = Density;
         outlineDistanceEcho = OutlineDistance;
+        colorEcho = OutlineColor;
     }
 
     private void LateUpdate()
