@@ -149,6 +149,7 @@ public class KamaraOutlinerScr : MonoBehaviour
         }
     }
 
+    //returns a point on circle around transforms center
     private Vector3 OuterEdgePoint(int step)
     {
         float myAngle = (float)step * (360.0f / (float)Density) * Mathf.Deg2Rad;
