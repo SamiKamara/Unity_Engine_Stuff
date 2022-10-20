@@ -1,4 +1,4 @@
-﻿/*
+/*
 This script draws outline to Unity Text component by cloning the 
 text and offsetting custom amount of clones from the original text.
 */
@@ -141,15 +141,14 @@ public class KamaraOutlinerScr : MonoBehaviour
         {
             ShadowCloneParent = new GameObject("ShadowCloneParentGob");
             ShadowCloneParent.transform.SetParent(transform.parent);
-            int si = ShadowCloneParent.transform.GetSiblingIndex();
-            ShadowCloneParent.transform.SetSiblingIndex(si - 1);
+            int si = transform.GetSiblingIndex();
+            ShadowCloneParent.transform.SetSiblingIndex(si);
             ShadowCloneParent.transform.rotation = transform.rotation;
             ShadowCloneParent.transform.localScale = transform.localScale;
             ShadowCloneParent.transform.position = transform.position;
         }
     }
 
-    //returns a point on circle around transforms center
     private Vector3 OuterEdgePoint(int step)
     {
         float myAngle = (float)step * (360.0f / (float)Density) * Mathf.Deg2Rad;
